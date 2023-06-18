@@ -34,7 +34,7 @@ namespace KatalonDemoExercise.StepDefinitions
             homepage.ClickCartLink();
         }
         
-        [When(@"a user clicks on the remove item button for the lowest price item")]
+        [When(@"a user searches and clicks on the remove item button for the lowest price item")]
         public void WhenAUserClicksOnTheRemoveItemButtonForTheLowestPriceItem()
         {
             cartpage.RemoveLowestPriceItem();

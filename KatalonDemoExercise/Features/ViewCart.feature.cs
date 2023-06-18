@@ -105,7 +105,7 @@ this.ScenarioInitialize(scenarioInfo);
  testRunner.Then("a user is able to get a total of 4 items", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
 #line 9
- testRunner.When("a user clicks on the remove item button for the lowest price item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("a user searches and clicks on the remove item button for the lowest price item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 10
  testRunner.Then("a user is able to get a total of 3 items", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
