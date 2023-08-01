@@ -6,6 +6,7 @@ using NUnit.Framework;
 using AventStack.ExtentReports.Reporter;
 using AventStack.ExtentReports;
 using AventStack.ExtentReports.Gherkin.Model;
+using System.IO;
 
 namespace KatalonDemoExercise.StepDefinitions
 {
@@ -30,27 +31,34 @@ namespace KatalonDemoExercise.StepDefinitions
             context.LoadKatalonDemoApplication();
             scenario = feature.CreateNode<Scenario>(scenarioContext.ScenarioInfo.Title);
         }
-        
-        [When(@"a user adds (.*) items to cart")]
-        public void WhenAUserAddsItemsToCart(int itemQuantity)
+
+        [Given(@"I add (.*) random items to my cart")]
+        public void GivenIAddRandomItemsToMyCart(int itemQuantity)
         {
             homepage.AddFourItemsToCart();
         }
-        
-        [When(@"a user clicks on view cart")]
-        public void WhenAUserClicksOnViewCart()
+
+        [When(@"I search for lowest price item")]
+        public void WhenISearchForLowestPriceItem()
+        {
+            cartpage.SearchLowestPriceItem();
+        }
+
+        [When(@"I view my cart")]
+        public void WhenIViewMyCart()
         {
             homepage.ClickCartLink();
         }
-        
-        [When(@"a user searches and clicks on the remove item button for the lowest price item")]
-        public void WhenAUserClicksOnTheRemoveItemButtonForTheLowestPriceItem()
+
+        [When(@"I am able to remove the lowest price item from my cart")]
+        public void WhenIAmAbleToRemoveTheLowestPriceItemFromMyCart()
         {
             cartpage.RemoveLowestPriceItem();
         }
-        
-        [Then(@"a user is able to get a total of (.*) items")]
-        public void ThenAUserIsAbleToGetATotalOfItems(int expectedNumberOfItemsInCart)
+
+        [Then(@"I find total (.*) items listed in my cart")]
+        [Then(@"I am able to verify (.*) items in my cart")]
+        public void ThenIFindTotalItemsListedInMyCart(int expectedNumberOfItemsInCart)
         {
             int actualNumberOfItemsInCart = cartpage.CountItemsInCart();
             Assert.IsTrue(expectedNumberOfItemsInCart.Equals(actualNumberOfItemsInCart));
@@ -121,7 +129,9 @@ namespace KatalonDemoExercise.StepDefinitions
             {
                 if (scenarioContext.TestError != null)
                 {
+                    
                     string scenarioName = scenarioContext.ScenarioInfo.Title;
+                    Directory.CreateDirectory("ReportScreenshots");
                     string directory = AppDomain.CurrentDomain.BaseDirectory + @"\ReportScreenshots\";
                     context.TakeScreenshotAtThePointOfTestFailure(directory, scenarioName);
                 }

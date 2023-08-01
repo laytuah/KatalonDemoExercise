@@ -3,8 +3,9 @@
 	#Pre-requisite: Four random Items must be added to cart
 Scenario: 01_Verify that the cart is left with three items when one with lowest price is removed.
 	Given that katalon Ecommerce website is loaded
-	When a user adds 4 items to cart
-	And a user clicks on view cart
-	Then a user is able to get a total of 4 items
-	When a user searches and clicks on the remove item button for the lowest price item
-	Then a user is able to get a total of 3 items
+	And I add 4 random items to my cart
+	When I view my cart
+	Then I find total 4 items listed in my cart
+	When I search for lowest price item
+	And I am able to remove the lowest price item from my cart
+	Then I am able to verify 3 items in my cart

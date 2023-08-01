@@ -16,17 +16,28 @@ namespace KatalonDemoExercise.Pages
         {
             context = _context;
         }
-        By itemOne = By.XPath("//a[@data-product_id='54']");
-        By itemTwo = By.XPath("//a[@data-product_id='26']");
-        By itemThree = By.XPath("//a[@data-product_id='66']");
-        By itemFour = By.XPath("//a[@data-product_id='57']");
         By cartLink = By.XPath("//a[@href='https://cms.demo.katalon.com/cart/']");
-        public void AddFourItemsToCart()
+
+        By itemsPath = By.XPath("//a[text()='Add to cart']");
+            public void AddFourItemsToCart()
         {
-            context.driver.FindElement(itemOne).Click(); Thread.Sleep(200);
-            context.driver.FindElement(itemTwo).Click(); Thread.Sleep(200);
-            context.driver.FindElement(itemThree).Click(); Thread.Sleep(200);
-            context.driver.FindElement(itemFour).Click(); Thread.Sleep(200);
+            IList<IWebElement> allItems = context.driver.FindElements(itemsPath);
+            Random random = new Random();
+            List<int> randomIndices = new List<int>();
+
+            while (randomIndices.Count < 4)
+            {
+                int index = random.Next(0, allItems.Count);
+                if (!randomIndices.Contains(index))
+                    randomIndices.Add(index);
+            }
+
+            foreach (int index in randomIndices)
+            {
+                IWebElement element = allItems[index];
+                element.SendKeys(Keys.Enter); /*This should have been '.click' but 'interception error' was 
+                                               * encountered for specific items*/ Thread.Sleep(200);
+            }
         }
 
         public CartPage ClickCartLink()

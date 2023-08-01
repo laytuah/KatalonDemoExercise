@@ -11,7 +11,6 @@ namespace KatalonDemoExercise.Hooks
     public class Context
     {
         public IWebDriver driver;
-        //string baseUrl = "https://cms.demo.katalon.com/";
         string baseUrl = EnvironmentData.baseUrl;
 
         public void LoadKatalonDemoApplication()
