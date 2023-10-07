@@ -13,6 +13,7 @@ namespace KatalonDemoExercise.StepDefinitions
     [Binding]
     public class ViewCartSteps
     {
+        //
         Context context;
         Homepage homepage;
         CartPage cartpage;
