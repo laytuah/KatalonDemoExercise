@@ -140,12 +140,12 @@
     <Error Condition="!Exists('..\packages\SpecFlow.NUnit.3.9.74\build\SpecFlow.NUnit.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\SpecFlow.NUnit.3.9.74\build\SpecFlow.NUnit.targets'))" />
     <Error Condition="!Exists('..\packages\NUnit3TestAdapter.4.5.0\build\net462\NUnit3TestAdapter.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\NUnit3TestAdapter.4.5.0\build\net462\NUnit3TestAdapter.props'))" />
     <Error Condition="!Exists('..\packages\NUnit.3.13.1\build\NUnit.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\NUnit.3.13.1\build\NUnit.props'))" />
-    <Error Condition="!Exists('..\packages\Selenium.WebDriver.ChromeDriver.116.0.5845.9600\build\Selenium.WebDriver.ChromeDriver.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Selenium.WebDriver.ChromeDriver.116.0.5845.9600\build\Selenium.WebDriver.ChromeDriver.targets'))" />
+    <Error Condition="!Exists('..\packages\Selenium.WebDriver.ChromeDriver.118.0.5993.7000\build\Selenium.WebDriver.ChromeDriver.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Selenium.WebDriver.ChromeDriver.118.0.5993.7000\build\Selenium.WebDriver.ChromeDriver.targets'))" />
   </Target>
   <Import Project="..\packages\Selenium.WebDriver.4.9.1\build\Selenium.WebDriver.targets" Condition="Exists('..\packages\Selenium.WebDriver.4.9.1\build\Selenium.WebDriver.targets')" />
   <Import Project="..\packages\Selenium.Chrome.WebDriver.85.0.0\build\Selenium.Chrome.WebDriver.targets" Condition="Exists('..\packages\Selenium.Chrome.WebDriver.85.0.0\build\Selenium.Chrome.WebDriver.targets')" />
   <Import Project="..\packages\SpecFlow.3.9.74\build\SpecFlow.targets" Condition="Exists('..\packages\SpecFlow.3.9.74\build\SpecFlow.targets')" />
   <Import Project="..\packages\SpecFlow.Tools.MsBuild.Generation.3.9.74\build\SpecFlow.Tools.MsBuild.Generation.targets" Condition="Exists('..\packages\SpecFlow.Tools.MsBuild.Generation.3.9.74\build\SpecFlow.Tools.MsBuild.Generation.targets')" />
   <Import Project="..\packages\SpecFlow.NUnit.3.9.74\build\SpecFlow.NUnit.targets" Condition="Exists('..\packages\SpecFlow.NUnit.3.9.74\build\SpecFlow.NUnit.targets')" />
-  <Import Project="..\packages\Selenium.WebDriver.ChromeDriver.116.0.5845.9600\build\Selenium.WebDriver.ChromeDriver.targets" Condition="Exists('..\packages\Selenium.WebDriver.ChromeDriver.116.0.5845.9600\build\Selenium.WebDriver.ChromeDriver.targets')" />
+  <Import Project="..\packages\Selenium.WebDriver.ChromeDriver.118.0.5993.7000\build\Selenium.WebDriver.ChromeDriver.targets" Condition="Exists('..\packages\Selenium.WebDriver.ChromeDriver.118.0.5993.7000\build\Selenium.WebDriver.ChromeDriver.targets')" />
 </Project>
