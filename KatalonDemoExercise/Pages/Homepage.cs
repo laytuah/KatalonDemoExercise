@@ -17,7 +17,6 @@ namespace KatalonDemoExercise.Pages
             context = _context;
         }
         By cartLink = By.XPath("//a[@href='https://cms.demo.katalon.com/cart/']");
-
         By itemsPath = By.XPath("//a[text()='Add to cart']");
             public void AddFourItemsToCart()
         {
@@ -35,8 +34,7 @@ namespace KatalonDemoExercise.Pages
             foreach (int index in randomIndices)
             {
                 IWebElement element = allItems[index];
-                element.SendKeys(Keys.Enter); /*This should have been '.click' but 'interception error' was 
-                                               * encountered for specific items*/ Thread.Sleep(200);
+                element.SendKeys(Keys.Enter); Thread.Sleep(200);
             }
         }
 
